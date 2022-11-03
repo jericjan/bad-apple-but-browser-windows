@@ -7,10 +7,29 @@
   <title>title</title>
   <meta name="description" content="eh">
 <style>
-div {
-    text-align: center;
+div#bottom {
+    
     position: absolute;
     bottom: 0;	
+}
+
+div {
+text-align: center;
+}
+
+body {
+    background-color: black;
+}
+
+h1, p {
+    color: white;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+button {
+    font-weight: 900;
+    border-radius: 11px;
+    padding: 6px;
 }
 </style>
 
@@ -18,8 +37,12 @@ div {
 
 <body>
 <div>
+<h1>Bad Apple but Browser Windows</h1>
+<p>look at the buttons on the lower left corner of this site</p>
+</div>
+<div id="bottom">
 <button id="go">Open Windows</button>
-<button id="bapple">Start Bad Apple!</button>
+<button id="bapple" disabled>Start Bad Apple!</button>
 <button id="close">Close Windows</button>
 </div>
 

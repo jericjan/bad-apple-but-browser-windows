@@ -5,7 +5,10 @@ var availHeight, availWidth;
 var windowsList = [];
 
 var goButton = document.querySelector("#go")
+var startBapple = document.querySelector("#bapple")
+var closeWindows = document.querySelector("#close")
 goButton.onclick = function(){
+	startBapple.disabled = false;
 	var bx = Math.round( screen.width  / 2 - unit / 2 );
 	var by = Math.round( screen.height / 2 - unit / 2 );
 	var num = 0;
@@ -51,8 +54,10 @@ point_list.push([width*j, height*i])
 	windowLoop();        
 	}
 	
-var startBapple = document.querySelector("#bapple")
-startBapple.onclick = function(){	
+
+startBapple.onclick = function(){
+startBapple.disabled = true;
+startBapple.textContent = "Bad Apple will start in 1 minute. Please wait...";	
 for (let i=0; i<windowsList.length; i++) {
 	windowsList[i].postMessage(new Date(new Date().getTime() + 60000).toString());
 	windowsList[i].focus()	
@@ -60,7 +65,7 @@ for (let i=0; i<windowsList.length; i++) {
 
 }
 
-var closeWindows = document.querySelector("#close")
+
 closeWindows.onclick = function(){
 for (let i=0; i<windowsList.length; i++) {
 	windowsList[i].close();	
